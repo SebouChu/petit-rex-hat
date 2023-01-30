@@ -41,7 +41,8 @@ Rails.application.configure do
   config.active_storage.service = :scaleway
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  # Caddy forwarding to Nginx forwarding to the app, SSL isn't used inside the host machine.
+  # config.force_ssl = true
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
