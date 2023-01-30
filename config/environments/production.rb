@@ -41,8 +41,7 @@ Rails.application.configure do
   config.active_storage.service = :scaleway
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # Caddy forwarding to Nginx forwarding to the app, SSL isn't used inside the host machine.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
@@ -59,6 +58,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "petit_rex_hat_production"
 
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.default_url_options = { host: 'https://petit-rex.sebou.dev' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
