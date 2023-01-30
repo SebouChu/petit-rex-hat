@@ -1,4 +1,8 @@
 fr:
+  nav:
+    account: Mon compte
+    not_connected: Non connecté
+    sign_out: Se déconnecter
   simple_form:
     "yes": 'Oui'
     "no": 'Non'

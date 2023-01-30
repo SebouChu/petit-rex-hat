@@ -24,6 +24,27 @@
                 <%= link_to "Accueil", root_path, class: class_names("nav-link", { "active": (controller_name == "home" && action_name == "index") }) %>
               </li>
             </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <% if user_signed_in? %>
+                <li class="nav-item dropdown">
+                  <%= link_to current_user.email, "#", class: "nav-link dropdown-toggle", role: "button", data: { "bs-toggle": "dropdown" }, aria: { expanded: false } %>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><%= link_to t("nav.account"), edit_user_registration_path, class: "dropdown-item" %></li>
+                    <li><%= link_to t("nav.sign_out"), destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+                  </ul>
+                </li>
+              <% else %>
+                <li class="nav-item dropdown">
+                  <%= link_to t('nav.not_connected'), "#", class: "nav-link dropdown-toggle", role: "button", data: { "bs-toggle": "dropdown" }, aria: { expanded: false } %>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><%= link_to t("devise.shared.links.sign_in"), new_user_session_path, class: "dropdown-item" %></li>
+                    <% if Devise.mappings[:user].registerable? %>
+                      <li><%= link_to t("devise.shared.links.sign_up"), new_user_registration_path, class: "dropdown-item" %></li>
+                    <% end %>
+                  </ul>
+                </li>
+              <% end %>
+            </ul>
           </div>
         </div>
       </nav>
