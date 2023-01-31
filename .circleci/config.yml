@@ -68,6 +68,10 @@ jobs:
       # Database setup
       - run: bundle exec rake db:create db:schema:load
 
+      # Assets setup
+      - run: yarn build
+      - run: yarn build:css
+
       # Code Climate setup
       - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
       - run: chmod +x ./cc-test-reporter
