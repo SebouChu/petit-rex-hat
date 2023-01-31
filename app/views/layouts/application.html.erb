@@ -38,9 +38,6 @@
                   <%= link_to t('nav.not_connected'), "#", class: "nav-link dropdown-toggle", role: "button", data: { "bs-toggle": "dropdown" }, aria: { expanded: false } %>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li><%= link_to t("devise.shared.links.sign_in"), new_user_session_path, class: "dropdown-item" %></li>
-                    <% if Devise.mappings[:user].registerable? %>
-                      <li><%= link_to t("devise.shared.links.sign_up"), new_user_registration_path, class: "dropdown-item" %></li>
-                    <% end %>
                   </ul>
                 </li>
               <% end %>
