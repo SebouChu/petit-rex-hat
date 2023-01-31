@@ -22,7 +22,6 @@
 #  fk_rails_...  (season_id => seasons.id)
 #  fk_rails_...  (user_id => users.id)
 #
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 twentyone_seb_interstellar:
   season: twentyone

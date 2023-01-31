@@ -14,7 +14,7 @@
     <h5 class="card-title">
       <%= season %>
     </h5>
-    <p class="card-text">TODO : X films</p>
+    <p class="card-text"><%= season.suggestions.size %> <%= Movie.model_name.human(count: 2).downcase %></p>
     <div class="card-actions">
       <%= link_to t("buttons.see"), season, class: "btn btn-sm btn-primary" %>
       <%= link_to t("buttons.edit"), [:edit, season], class: "btn btn-sm btn-warning" %>
