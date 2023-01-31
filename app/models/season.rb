@@ -9,7 +9,11 @@
 #  updated_at :datetime         not null
 #
 class Season < ApplicationRecord
+  MAX_SUGGESTIONS_PER_USER = 10
+
   enum status: { upcoming: 0, ongoing: 1, ended: 2 }
+
+  has_many :suggestions, dependent: :destroy
 
   validates :name, presence: true
 

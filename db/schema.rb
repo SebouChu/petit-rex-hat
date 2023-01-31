@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_31_021145) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_31_031421) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_31_021145) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "season_suggestions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "season_id", null: false
+    t.uuid "user_id", null: false
+    t.uuid "movie_id", null: false
+    t.datetime "picked_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_season_suggestions_on_movie_id"
+    t.index ["season_id"], name: "index_season_suggestions_on_season_id"
+    t.index ["user_id"], name: "index_season_suggestions_on_user_id"
+  end
+
   create_table "seasons", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.integer "status", default: 0
@@ -76,4 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_31_021145) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "season_suggestions", "movies"
+  add_foreign_key "season_suggestions", "seasons"
+  add_foreign_key "season_suggestions", "users"
 end

@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     delete "/users" => "users/registrations#destroy", as: ''
   end
 
-  resources :seasons
+  resources :seasons do
+    resources :suggestions, only: [:new, :create, :destroy], controller: "seasons/suggestions"
+  end
 
   root 'home#index'
 end

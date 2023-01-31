@@ -3,14 +3,20 @@ class TheMovieDb
     @@configuration ||= Tmdb::Configuration.new
   end
 
+  def self.find(identifier)
+    result = Tmdb::Movie.detail(identifier.to_i)
+    return nil if result.has_key?("success") && !result["success"]
+    to_movie_attributes(Tmdb::Movie.new(result))
+  end
+
   def self.search(query, limit: 5)
     results = Tmdb::Movie.find(query).take(5)
-    results.map { |result| format_result(result) }
+    results.map { |result| to_movie_attributes(result) }
   end
 
   private
 
-  def self.format_result(result)
+  def self.to_movie_attributes(result)
     {
       title: result.original_title,
       title_fr: result.title,

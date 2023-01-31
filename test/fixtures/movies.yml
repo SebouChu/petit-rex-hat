@@ -19,6 +19,8 @@ interstellar:
   title_fr: Interstellar
   director: Christopher Nolan
   release_date: 2014-11-05
+  backdrop_path: /rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg
+  poster_path: /1pnigkWWy8W032o9TKDneBa3eVK.jpg
   tmdb_identifier: 157336
 
 it:
@@ -26,4 +28,6 @@ it:
   title_fr: Ça
   director: Andy Muschietti
   release_date: 2017-09-06
+  backdrop_path: /tcheoA2nPATCm2vvXw2hVQoaEFD.jpg
+  poster_path: /3SUz0F0I2Bodcj9Ev2pYSWnE9zp.jpg
   tmdb_identifier: 346364

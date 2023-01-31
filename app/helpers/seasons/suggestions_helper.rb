@@ -1,0 +1,2 @@
+module Seasons::SuggestionsHelper
+end

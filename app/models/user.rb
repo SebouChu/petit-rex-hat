@@ -24,6 +24,8 @@ class User < ApplicationRecord
 
   validates :nickname, uniqueness: true, allow_blank: true
 
+  has_many :suggestions, dependent: :nullify
+
   def to_s
     nickname.present? ? nickname : email
   end

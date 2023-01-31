@@ -11,7 +11,7 @@
 
 twentyone:
   name: Saison 2021-2022
-  status: 0
+  status: 2
 
 twentytwo:
   name: Saison 2022-2023
@@ -19,4 +19,4 @@ twentytwo:
 
 twentythree:
   name: Saison 2023-2024
-  status: 2
+  status: 0

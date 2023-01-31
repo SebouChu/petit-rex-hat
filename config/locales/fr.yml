@@ -1,6 +1,14 @@
 fr:
   activerecord:
     attributes:
+      movie:
+        backdrop_path: Chemin de l'illustration
+        director: Réalisateur
+        poster_path: Chemin du poster
+        release_date: Date de sortie
+        title: Titre original
+        title_fr: Titre français
+        tmdb_identifier: Identifiant TheMovieDB
       season:
         name: Nom
         status: Statut
@@ -11,9 +19,15 @@ fr:
       user:
         nickname: Pseudo
     models:
+      movie:
+        one: Film
+        other: Films
       season:
         one: Saison
         other: Saisons
+      season/suggestion:
+        one: Suggestion
+        other: Suggestions
   alerts:
     please_confirm: Est-ce-que vous confirmez ?
   buttons:
