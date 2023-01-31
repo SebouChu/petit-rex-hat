@@ -10,7 +10,7 @@ class TheMovieDb
   end
 
   def self.search(query, limit: 5)
-    results = Tmdb::Movie.find(query).take(5)
+    results = Tmdb::Movie.find(query).take(limit)
     results.map { |result| to_movie_attributes(result) }
   end
 
@@ -21,7 +21,7 @@ class TheMovieDb
       title: result.original_title,
       title_fr: result.title,
       director: get_director(result.id),
-      release_date: result.release_date,
+      release_date: Date.parse(result.release_date),
       poster_path: result.poster_path,
       backdrop_path: result.backdrop_path,
       tmdb_identifier: result.id

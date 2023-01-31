@@ -14,7 +14,9 @@ Rails.application.routes.draw do
       post :pick, on: :collection, as: :pick_in
     end
   end
-  resources :movies, only: [:index, :show]
+  resources :movies, only: [:index, :show] do
+    get :search, on: :collection
+  end
 
   root 'home#index'
 end

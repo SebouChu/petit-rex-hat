@@ -4,6 +4,14 @@ class MoviesController < ApplicationController
     breadcrumb
   end
 
+  def search
+    @season = Season.find(params[:season_id])
+    @results = TheMovieDb.search(params[:query])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def show
     @movie = Movie.find(params[:id])
     breadcrumb

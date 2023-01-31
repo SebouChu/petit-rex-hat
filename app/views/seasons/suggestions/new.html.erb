@@ -1,17 +1,19 @@
 <div class="container-fluid">
   <h1><%= @season %> - <%= Season::Suggestion.model_name.human %></h1>
-  <%= simple_form_for @suggestion, url: season_suggestions_path(@season) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.error_notification message: f.object.errors.full_messages.to_sentence %>
-
-
+  <%= form_tag search_movies_path, method: :get, remote: true do %>
     <div class="row">
       <div class="col-md-4">
-        <%= f.input :movie_tmdb_identifier, as: :integer, label: "Identifiant TheMovieDB" %>
-        <%# f.hidden_field :movie_tmdb_identifier %>
+        <div class="mb-3">
+          <input type="text" name="query" class="form-control" placeholder="ex: Interstellar">
+        </div>
+
+        <div class="form-actions">
+          <input type="hidden" name="season_id" value="<%= @season.id %>">
+          <%= submit_tag t("buttons.search"), class: "btn btn-dark" %>
+        </div>
       </div>
     </div>
-    <%= f.submit t('buttons.save'), class: "btn btn-primary" %>
   <% end %>
+
+  <div class="row" id="suggestions-list"></div>
 </div>

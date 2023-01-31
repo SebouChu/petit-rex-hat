@@ -1,0 +1,8 @@
+var suggestionsContainer = document.querySelector("#suggestions-list");
+while (suggestionsContainer.firstChild) {
+  suggestionsContainer.removeChild(suggestionsContainer.lastChild);
+}
+
+<% @results.each do |result| %>
+  suggestionsContainer.insertAdjacentHTML('beforeend',"<%= j render('seasons/suggestions/movie-result', result: result) %>");
+<% end %>

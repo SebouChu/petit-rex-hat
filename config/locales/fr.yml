@@ -41,10 +41,12 @@ fr:
     please_confirm: Est-ce-que vous confirmez ?
   buttons:
     add: Ajouter
+    choose: Choisir
     destroy: Supprimer
     edit: Modifier
     remove: Retirer
     save: Enregistrer
+    search: Rechercher
     see: Voir
   home: Accueil
   nav:
