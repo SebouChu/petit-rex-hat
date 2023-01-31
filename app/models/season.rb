@@ -14,11 +14,16 @@ class Season < ApplicationRecord
   enum status: { upcoming: 0, ongoing: 1, ended: 2 }
 
   has_many :suggestions, dependent: :destroy
-  has_many :users, through: :suggestions
+  has_many :users, -> { distinct }, through: :suggestions
 
-  validates :name, presence: true
+  validates :name, :status, presence: true
 
   def to_s
     name
+  end
+
+  def pick_suggestion!
+    picked_suggestion = suggestions.not_picked.order('RANDOM()').first
+    picked_suggestion.update(picked_at: Time.zone.now)
   end
 end

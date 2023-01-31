@@ -1,5 +1,16 @@
 <div class="container-fluid">
-  <h1><%= @movie %></h1>
+  <div class="row">
+    <div class="col-md-9">
+      <h1><%= @movie %></h1>
 
-  <p>TODO: Beaucoup d'infos</p>
+      <p><strong><%= Movie.human_attribute_name("title") %></strong> : <%= @movie.title %></p>
+      <p><strong><%= Movie.human_attribute_name("director") %></strong> : <%= @movie.director %></p>
+      <p><strong><%= Movie.human_attribute_name("release_date") %></strong> : <%= l(@movie.release_date) %></p>
+      <p><strong><%= Movie.human_attribute_name("backdrop") %></strong></p>
+      <%= image_tag @movie.small_backdrop_url, alt: @movie.title_fr, class: "img-fluid mb-4" %>
+    </div>
+    <div class="col-md-3">
+      <%= image_tag @movie.original_poster_url, alt: @movie.title_fr, class: "img-fluid" %>
+    </div>
+  </div>
 </div>

@@ -33,6 +33,9 @@ class Season::Suggestion < ApplicationRecord
 
   before_validation :find_or_create_movie_from_tmdb, on: :create, if: :movie_tmdb_identifier
 
+  scope :not_picked, -> { where(picked_at: nil) }
+  scope :picked, -> { where.not(picked_at: nil) }
+
   private
 
   def find_or_create_movie_from_tmdb

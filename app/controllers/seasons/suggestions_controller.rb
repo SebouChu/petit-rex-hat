@@ -1,6 +1,11 @@
 class Seasons::SuggestionsController < ApplicationController
   before_action :load_season
 
+  def pick
+    @season.pick_suggestion!
+    redirect_to @season
+  end
+
   def new
     @suggestion = @season.suggestions.new
     breadcrumb

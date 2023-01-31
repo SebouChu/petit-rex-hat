@@ -1,7 +1,8 @@
 <div class="card w-100">
+  <%= image_tag movie.small_poster_url, class: "card-img-top", alt: movie.title_fr %>
   <div class="card-body">
     <h5 class="card-title"><%= movie %></h5>
-    <p class="card-text">TODO : Quelques infos</p>
+    <h6 class="card-subtitle mb-2 text-muted"><%= movie.director %>, <%= movie.release_date.year %></h6>
     <div class="card-actions">
       <%= link_to t("buttons.see"), movie, class: "btn btn-sm btn-primary" %>
     </div>

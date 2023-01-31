@@ -14,6 +14,9 @@
 #  updated_at      :datetime         not null
 #
 class Movie < ApplicationRecord
+  SMALL_BACKDROP_SIZE = "w780" # From TheMovieDb.configuration.backdrop_sizes
+  SMALL_POSTER_SIZE = "w500" # From TheMovieDb.configuration.poster_sizes
+
   has_many :suggestions, dependent: :destroy
 
   validates :tmdb_identifier, presence: true, uniqueness: true
@@ -30,5 +33,21 @@ class Movie < ApplicationRecord
 
   def to_s
     title_fr
+  end
+
+  def original_backdrop_url
+    [TheMovieDb.configuration.base_url, "original", backdrop_path].join
+  end
+
+  def original_poster_url
+    [TheMovieDb.configuration.base_url, "original", poster_path].join
+  end
+
+  def small_backdrop_url
+    [TheMovieDb.configuration.base_url, SMALL_BACKDROP_SIZE, backdrop_path].join
+  end
+
+  def small_poster_url
+    [TheMovieDb.configuration.base_url, SMALL_POSTER_SIZE, poster_path].join
   end
 end

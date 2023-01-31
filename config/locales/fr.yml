@@ -2,8 +2,10 @@ fr:
   activerecord:
     attributes:
       movie:
+        backdrop: Illustration
         backdrop_path: Chemin de l'illustration
         director: Réalisateur
+        poster: Poster
         poster_path: Chemin du poster
         release_date: Date de sortie
         title: Titre original
@@ -28,12 +30,16 @@ fr:
       season/suggestion:
         one: Suggestion
         other: Suggestions
+      user:
+        one: Utilisateur
+        other: Utilisateurs
   alerts:
     please_confirm: Est-ce-que vous confirmez ?
   buttons:
     add: Ajouter
     destroy: Supprimer
     edit: Modifier
+    remove: Retirer
     save: Enregistrer
     see: Voir
   home: Accueil
@@ -47,6 +53,8 @@ fr:
     successfully_updated: "%{model} a bien été mis(e) à jour."
   seasons:
     add_suggestion: Ajouter une suggestion
+    pick_suggestion: Tirer une suggestion
+    remaining_suggestions: Suggestions restantes
   simple_form:
     "yes": 'Oui'
     "no": 'Non'
@@ -55,3 +63,5 @@ fr:
       mark: '*'
     error_notification:
       default_message: "Veuillez résoudre les problèmes suivants :"
+  suggestions:
+    suggested_by: Suggéré par %{user}

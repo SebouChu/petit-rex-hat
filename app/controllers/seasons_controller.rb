@@ -7,6 +7,10 @@ class SeasonsController < ApplicationController
   end
 
   def show
+    @user_suggestions = @season.suggestions.where(user_id: current_user.id).order(:created_at)
+    @picked_suggestions = @season.suggestions.picked.order(picked_at: :desc)
+    @remaining_suggestions = @season.suggestions.not_picked
+    @last_picked_suggestion = @picked_suggestions.first
     breadcrumb
   end
 
@@ -58,7 +62,7 @@ class SeasonsController < ApplicationController
   private
 
   def season_params
-    params.require(:season).permit(:name)
+    params.require(:season).permit(:name, :status)
   end
 
   def load_season
