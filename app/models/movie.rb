@@ -27,4 +27,8 @@ class Movie < ApplicationRecord
     end
     movie
   end
+
+  def to_s
+    title_fr
+  end
 end

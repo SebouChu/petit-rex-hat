@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :seasons do
     resources :suggestions, only: [:new, :create, :destroy], controller: "seasons/suggestions"
   end
+  resources :movies, only: [:index, :show]
 
   root 'home#index'
 end

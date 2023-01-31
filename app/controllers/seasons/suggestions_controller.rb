@@ -19,7 +19,7 @@ class Seasons::SuggestionsController < ApplicationController
   end
 
   def destroy
-    @suggestion = @season.find_by(user_id: current_user.id, id: params[:id])
+    @suggestion = @season.suggestions.find_by!(user_id: current_user.id, id: params[:id])
     @suggestion.destroy
     redirect_to @season, notice: t('notices.successfully_destroyed', model: Season::Suggestion.model_name.human)
   end

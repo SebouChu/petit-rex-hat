@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <h1><%= Movie.model_name.human(count: 2) %> (<%= @movies.size %>)</h1>
+
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-md-3">
+        <%= render "movies/movie", movie: movie %>
+      </div>
+    <% end %>
+  </div>
+</div>
