@@ -31,7 +31,7 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
               <% if user_signed_in? %>
                 <li class="nav-item dropdown">
-                  <%= link_to current_user.email, "#", class: "nav-link dropdown-toggle", role: "button", data: { "bs-toggle": "dropdown" }, aria: { expanded: false } %>
+                  <%= link_to current_user, "#", class: "nav-link dropdown-toggle", role: "button", data: { "bs-toggle": "dropdown" }, aria: { expanded: false } %>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li><%= link_to t("nav.account"), edit_user_registration_path, class: "dropdown-item" %></li>
                     <li><%= link_to t("nav.sign_out"), destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
@@ -50,7 +50,7 @@
         </div>
       </nav>
     </header>
-    <%= render_breadcrumbs builder: BootstrapBreadcrumbsBuilder %>
+    <%= render_breadcrumbs builder: BootstrapBreadcrumbsBuilder if @breadcrumbs_on_rails.length > 1 %>
     <main class="my-3">
       <%= yield %>
     </main>

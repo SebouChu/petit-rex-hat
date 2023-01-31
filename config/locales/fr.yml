@@ -8,6 +8,8 @@ fr:
           ended: Terminée
           ongoing: En cours
           upcoming: A venir
+      user:
+        nickname: Pseudo
     models:
       season:
         one: Saison

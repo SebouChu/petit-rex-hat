@@ -18,6 +18,7 @@
       <%= f.input :password_confirmation,
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
+      <%= f.input :nickname %>
       <%= f.input :current_password,
                   hint: t('.we_need_your_current_password_to_confirm_your_changes'),
                   required: true,
