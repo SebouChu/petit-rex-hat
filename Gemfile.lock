@@ -71,6 +71,9 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     aws-eventstream (1.2.0)
     aws-partitions (1.701.0)
     aws-sdk-core (3.170.0)
@@ -117,6 +120,7 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
+    docile (1.4.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -225,6 +229,12 @@ GEM
     simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -265,6 +275,7 @@ PLATFORMS
 
 DEPENDENCIES
   activestorage-scaleway-service (~> 1.0)
+  annotate (~> 3.2)
   bootsnap
   capybara
   cssbundling-rails
@@ -280,6 +291,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0)
   selenium-webdriver
   simple_form (~> 5.2)
+  simplecov (~> 0.22.0)
   sprockets-rails
   stimulus-rails
   themoviedb (~> 1.0)

@@ -1,4 +1,17 @@
 fr:
+  activerecord:
+    attributes:
+      season:
+        name: Nom
+        status: Statut
+        statuses:
+          ended: Terminée
+          ongoing: En cours
+          upcoming: A venir
+    models:
+      season:
+        one: Saison
+        other: Saisons
   nav:
     account: Mon compte
     not_connected: Non connecté

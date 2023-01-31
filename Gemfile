@@ -26,11 +26,13 @@ group :development, :test do
 end
 
 group :development do
+  gem "annotate", "~> 3.2"
   gem "web-console"
 end
 
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem "simplecov", "~> 0.22.0"
   gem "webdrivers"
 end

@@ -1,5 +1,6 @@
 # Season
 - name:string
+- status:integer (upcoming, ongoing, ended)
 
 # User
 - devise stuff
@@ -13,9 +14,9 @@
 - backdrop:attachment
 - tmdb_identifier:bigint
 
-# Season::Suggestion
+# Suggestion
 - season:references
 - user:references
 - movie:references
-- was_picked:boolean{default: false}
+- picked_at:datetime
 => unique (season:movie)

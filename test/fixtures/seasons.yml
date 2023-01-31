@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: seasons
+#
+#  id         :uuid             not null, primary key
+#  name       :string
+#  status     :integer          default("upcoming")
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+twentyone:
+  name: Saison 2021-2022
+  status: 0
+
+twentytwo:
+  name: Saison 2022-2023
+  status: 1
+
+twentythree:
+  name: Saison 2023-2024
+  status: 2
