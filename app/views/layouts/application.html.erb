@@ -50,7 +50,7 @@
         </div>
       </nav>
     </header>
-    <%= render_breadcrumbs builder: BootstrapBreadcrumbsBuilder if @breadcrumbs_on_rails.length > 1 %>
+    <%= render_breadcrumbs builder: BootstrapBreadcrumbsBuilder if @breadcrumbs_on_rails.present? && @breadcrumbs_on_rails.length > 1 %>
     <main class="my-3">
       <% if notice.present? %>
         <div class="container">
