@@ -6,6 +6,7 @@ ruby "3.1.3"
 gem "activestorage-scaleway-service", "~> 1.0"
 gem "bootsnap", require: false
 gem "breadcrumbs_on_rails", "~> 4.1"
+gem "bugsnag", "~> 6.25"
 gem "cssbundling-rails"
 gem "devise", "~> 4.8"
 gem "devise-i18n", "~> 1.10"
