@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <h1><%= @season %></h1>
+
+  <div class="actions mb-4">
+    <%= link_to t("buttons.edit"), [:edit, @season], class: "btn btn-warning" %>
+    <%= link_to t("buttons.destroy"), @season, method: :delete, data: { confirm: t('please_confirm') }, class: "btn btn-danger" %>
+  </div>
+
+  <p>TODO: Liste des films</p>
+</div>

@@ -1,0 +1,8 @@
+<%= simple_form_for season do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :name %>
+    </div>
+  </div>
+  <%= f.submit t('buttons.save'), class: "btn btn-primary" %>
+<% end %>

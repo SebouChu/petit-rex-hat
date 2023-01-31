@@ -10,4 +10,10 @@
 #
 class Season < ApplicationRecord
   enum status: { upcoming: 0, ongoing: 1, ended: 2 }
+
+  validates :name, presence: true
+
+  def to_s
+    name
+  end
 end

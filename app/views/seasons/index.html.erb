@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <h1><%= Season.model_name.human(count: 2) %> (<%= @seasons.size %>)</h1>
+
+  <div class="actions mb-4">
+    <%= link_to t("buttons.add"), new_season_path, class: "btn btn-success" %>
+  </div>
+
+  <div class="row">
+    <% @seasons.each do |season| %>
+      <div class="col-md-3">
+        <%= render "seasons/season", season: season %>
+      </div>
+    <% end %>
+  </div>
+</div>

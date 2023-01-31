@@ -22,7 +22,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <%= link_to "Accueil", root_path, class: class_names("nav-link", { "active": (controller_name == "home" && action_name == "index") }) %>
+                <%= link_to t("home"), root_path, class: class_names("nav-link", { "active": (controller_name == "home") }) %>
+              </li>
+              <li class="nav-item">
+                <%= link_to Season.model_name.human(count: 2), seasons_path, class: class_names("nav-link", { "active": (controller_name == "seasons") }) %>
               </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
@@ -47,6 +50,7 @@
         </div>
       </nav>
     </header>
+    <%= render_breadcrumbs builder: BootstrapBreadcrumbsBuilder %>
     <main class="my-3">
       <%= yield %>
     </main>

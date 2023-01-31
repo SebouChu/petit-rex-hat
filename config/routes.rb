@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     delete "/users" => "devise/registrations#destroy", as: ''
   end
 
+  resources :seasons
+
   root 'home#index'
 end
