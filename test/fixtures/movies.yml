@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id              :uuid             not null, primary key
+#  backdrop_path   :string
+#  director        :string
+#  poster_path     :string
+#  release_date    :date
+#  title           :string
+#  title_fr        :string
+#  tmdb_identifier :bigint
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+interstellar:
+  title: Interstellar
+  title_fr: Interstellar
+  director: Christopher Nolan
+  release_date: 2014-11-05
+  tmdb_identifier: 157336
+
+it:
+  title: It
+  title_fr: Ça
+  director: Andy Muschietti
+  release_date: 2017-09-06
+  tmdb_identifier: 346364
