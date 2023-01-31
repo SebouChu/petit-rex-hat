@@ -18,6 +18,10 @@ fr:
           ended: Terminée
           ongoing: En cours
           upcoming: A venir
+      season/suggestion:
+        movie_id: Film
+        season_id: Saison
+        user_id: Utilisateur
       user:
         nickname: Pseudo
     models:

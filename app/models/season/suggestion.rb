@@ -29,6 +29,7 @@ class Season::Suggestion < ApplicationRecord
   belongs_to :user
   belongs_to :movie
 
+  validates :movie_id, uniqueness: true
   validate :must_respect_max_season_suggestions_per_user, on: :create
 
   before_validation :find_or_create_movie_from_tmdb, on: :create, if: :movie_tmdb_identifier
