@@ -45,6 +45,8 @@ fr:
     successfully_created: "%{model} a bien été créé(e)."
     successfully_destroyed: "%{model} a bien été supprimé(e)."
     successfully_updated: "%{model} a bien été mis(e) à jour."
+  seasons:
+    add_suggestion: Ajouter une suggestion
   simple_form:
     "yes": 'Oui'
     "no": 'Non'

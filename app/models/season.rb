@@ -14,6 +14,7 @@ class Season < ApplicationRecord
   enum status: { upcoming: 0, ongoing: 1, ended: 2 }
 
   has_many :suggestions, dependent: :destroy
+  has_many :users, through: :suggestions
 
   validates :name, presence: true
 

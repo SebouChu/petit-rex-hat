@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def to_s
     nickname.present? ? nickname : email
   end
+
+  def can_make_suggestions?(season)
+    season.suggestions.where(user_id: id).size < Season::MAX_SUGGESTIONS_PER_USER
+  end
 end
