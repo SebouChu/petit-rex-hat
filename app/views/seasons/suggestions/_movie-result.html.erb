@@ -4,7 +4,9 @@
     <%= image_tag small_poster_url, class: "card-img-top", alt: result[:title_fr] %>
     <div class="card-body">
       <h5 class="card-title"><%= result[:title_fr] %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= result[:director] %>, <%= result[:release_date].year %></h6>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <%= [result[:director], result.dig(:release_date)&.year].join(', ') %>
+      </h6>
       <div class="card-actions">
         <%= simple_form_for :season_suggestion, url: season_suggestions_path(@season), html: { class: 'mt-auto'} do |f| %>
           <%= f.input :movie_tmdb_identifier, as: :hidden, input_html: { value: result[:tmdb_identifier] } %>

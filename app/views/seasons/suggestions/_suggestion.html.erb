@@ -2,7 +2,9 @@
   <%= image_tag suggestion.movie.small_poster_url, class: "card-img-top", alt: suggestion.movie.title_fr %>
   <div class="card-body">
     <h5 class="card-title"><%= suggestion.movie %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= suggestion.movie.director %>, <%= suggestion.movie.release_date.year %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <%= [suggestion.movie.director, suggestion.movie.release_date&.year].join(', ') %>
+    </h6>
     <% unless @season.upcoming? %>
       <p><small><%= t("suggestions.suggested_by", user: suggestion.user.to_s) %></small></p>
     <% end %>
