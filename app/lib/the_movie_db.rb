@@ -21,7 +21,7 @@ class TheMovieDb
       title: result.original_title,
       title_fr: result.title,
       director: get_director(result.id),
-      release_date: Date.parse(result.release_date),
+      release_date: (result.release_date.present? ? Date.parse(result.release_date) : nil),
       poster_path: result.poster_path,
       backdrop_path: result.backdrop_path,
       tmdb_identifier: result.id
