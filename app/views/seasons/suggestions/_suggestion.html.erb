@@ -3,12 +3,12 @@
   <div class="card-body">
     <h5 class="card-title"><%= suggestion.movie %></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= suggestion.movie.director %>, <%= suggestion.movie.release_date.year %></h6>
-    <% if @season.upcoming? %>
-      <div class="card-actions">
-        <%= link_to t("buttons.remove"), [suggestion, { season_id: suggestion.season_id }], method: :delete, data: { confirm: t("alerts.please_confirm") }, class: "btn btn-sm btn-danger" %>
-      </div>
-    <% else %>
+    <% unless @season.upcoming? %>
       <p><small><%= t("suggestions.suggested_by", user: suggestion.user.to_s) %></small></p>
     <% end %>
+    <div class="card-actions">
+      <%= link_to t("buttons.edit"), [:edit, suggestion, { season_id: suggestion.season_id }], class: "btn btn-sm btn-warning" if suggestion.user_id == current_user.id && @season.god_mode? %>
+      <%= link_to t("buttons.remove"), [suggestion, { season_id: suggestion.season_id }], method: :delete, data: { confirm: t("alerts.please_confirm") }, class: "btn btn-sm btn-danger" if @season.upcoming? %>
+    </div>
   </div>
 </div>

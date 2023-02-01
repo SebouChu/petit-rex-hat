@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <h1><%= @season %> - <%= @suggestion.movie %></h1>
+  <%= simple_form_for @suggestion, url: [@suggestion, { season_id: @season.id }] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :picked_at, as: :date, html5: true %>
+      </div>
+    </div>
+    <%= f.submit t('buttons.save'), class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :seasons do
-    resources :suggestions, only: [:new, :create, :destroy], controller: "seasons/suggestions" do
+    resources :suggestions, only: [:new, :edit, :create, :update, :destroy], controller: "seasons/suggestions" do
       post :pick, on: :collection, as: :pick_in
     end
   end
