@@ -25,3 +25,4 @@
 seb:
   email: seb@example.com
   nickname: SebouChu
+  encrypted_password: <%= Devise::Encryptor.digest(User, "aVeryS3cureP4ssw0rd!") %>
