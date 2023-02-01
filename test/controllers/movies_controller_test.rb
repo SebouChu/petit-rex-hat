@@ -6,12 +6,16 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_index
-    get movies_url
-    assert_response :success
+    VCR.use_cassette(location) do
+      get movies_url
+      assert_response :success
+    end
   end
 
   def test_show
-    get movie_url(movies(:interstellar))
-    assert_response :success
+    VCR.use_cassette(location) do
+      get movie_url(movies(:interstellar))
+      assert_response :success
+    end
   end
 end
