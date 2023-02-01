@@ -62,7 +62,7 @@ class SeasonsController < ApplicationController
   private
 
   def season_params
-    params.require(:season).permit(:name, :status)
+    params.require(:season).permit(:name, :status, :god_mode)
   end
 
   def load_season

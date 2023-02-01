@@ -6,6 +6,7 @@
     <div class="col-md-4">
       <%= f.input :name %>
       <%= f.input :status, collection: Season.statuses.keys.map { |status| [t("activerecord.attributes.season.statuses.#{status}"), status] }, include_blank: false %>
+      <%= f.input :god_mode %>
     </div>
   </div>
   <%= f.submit t('buttons.save'), class: "btn btn-primary" %>

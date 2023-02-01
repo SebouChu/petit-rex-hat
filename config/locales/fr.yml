@@ -12,6 +12,7 @@ fr:
         title_fr: Titre français
         tmdb_identifier: Identifiant TheMovieDB
       season:
+        god_mode: Mode Dieu
         name: Nom
         status: Statut
         statuses:

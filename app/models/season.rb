@@ -3,6 +3,7 @@
 # Table name: seasons
 #
 #  id         :uuid             not null, primary key
+#  god_mode   :boolean          default(FALSE)
 #  name       :string
 #  status     :integer          default("upcoming")
 #  created_at :datetime         not null

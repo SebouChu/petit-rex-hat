@@ -45,6 +45,7 @@ class Season::Suggestion < ApplicationRecord
   end
 
   def must_respect_max_season_suggestions_per_user
+    return if season.god_mode?
     errors.add(:base, :max_suggestions_reached) unless season.suggestions.where(user_id: user_id).count < Season::MAX_SUGGESTIONS_PER_USER
   end
 end
