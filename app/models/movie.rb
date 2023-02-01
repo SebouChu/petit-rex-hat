@@ -17,7 +17,7 @@ class Movie < ApplicationRecord
   SMALL_BACKDROP_SIZE = "w780" # From TheMovieDb.configuration.backdrop_sizes
   SMALL_POSTER_SIZE = "w500" # From TheMovieDb.configuration.poster_sizes
 
-  has_many :suggestions, dependent: :destroy
+  has_many :suggestions
 
   validates :tmdb_identifier, presence: true, uniqueness: true
 

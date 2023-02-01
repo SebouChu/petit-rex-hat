@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       post :pick, on: :collection, as: :pick_in
     end
   end
-  resources :movies, only: [:index, :show] do
+  resources :movies, only: [:index, :show, :destroy] do
     get :search, on: :collection
   end
 
