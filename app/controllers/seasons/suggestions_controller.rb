@@ -30,13 +30,8 @@ class Seasons::SuggestionsController < ApplicationController
   end
 
   def update
-    if @suggestion.update(suggestion_params)
-      redirect_to @season, notice: t('notices.successfully_updated', model: Season::Suggestion.model_name.human)
-    else
-      breadcrumb
-      add_breadcrumb t('buttons.edit')
-      render :edit, status: :unprocessable_entity
-    end
+    @suggestion.update(suggestion_params)
+    redirect_to @season, notice: t('notices.successfully_updated', model: Season::Suggestion.model_name.human)
   end
 
   def destroy

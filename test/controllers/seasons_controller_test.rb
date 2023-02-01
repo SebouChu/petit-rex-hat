@@ -10,8 +10,23 @@ class SeasonsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  def test_show
+  def test_show_upcoming
+    get season_url(seasons(:twentythree))
+    assert_response :success
+  end
+
+  def test_show_ongoing
     get season_url(seasons(:twentytwo))
+    assert_response :success
+  end
+
+  def test_show_ended
+    get season_url(seasons(:twentyone))
+    assert_response :success
+  end
+
+  def test_show_god
+    get season_url(seasons(:twenty_god))
     assert_response :success
   end
 

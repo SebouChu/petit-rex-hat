@@ -35,10 +35,6 @@ class Movie < ApplicationRecord
     title_fr
   end
 
-  def original_backdrop_url
-    [TheMovieDb.configuration.base_url, "original", backdrop_path].join
-  end
-
   def original_poster_url
     [TheMovieDb.configuration.base_url, "original", poster_path].join
   end

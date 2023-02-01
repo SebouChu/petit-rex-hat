@@ -25,6 +25,6 @@ class Season < ApplicationRecord
 
   def pick_suggestion!
     picked_suggestion = suggestions.not_picked.order('RANDOM()').first
-    picked_suggestion.update(picked_at: Time.zone.now)
+    picked_suggestion.update(picked_at: Time.zone.now) if picked_suggestion.present?
   end
 end

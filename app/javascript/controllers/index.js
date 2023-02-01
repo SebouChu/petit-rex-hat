@@ -3,6 +3,3 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
-
-import MovieSearchController from "./movie_search_controller"
-application.register("movie-search", MovieSearchController)

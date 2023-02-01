@@ -31,3 +31,21 @@ it:
   backdrop_path: /tcheoA2nPATCm2vvXw2hVQoaEFD.jpg
   poster_path: /3SUz0F0I2Bodcj9Ev2pYSWnE9zp.jpg
   tmdb_identifier: 346364
+
+parasite:
+  title: 기생충
+  title_fr: Parasite
+  director: Bong Joon-ho
+  release_date: 2019-05-30
+  backdrop_path: /hiKmpZMGZsrkA3cdce8a7Dpos1j.jpg
+  poster_path: /7hLSzZX2jROmEXz2aEoh6JKUFy2.jpg
+  tmdb_identifier: 496243
+
+mon_inconnue:
+  title: Mon Inconnue
+  title_fr: Mon Inconnue
+  director: Hugo Gélin
+  release_date: 2019-01-18
+  backdrop_path: /fvLkIliuDY6Nr5OIySY9q1cET0Z.jpg
+  poster_path: /6SltsxgH5feW5cJTxjmJupEGgme.jpg
+  tmdb_identifier: 570131

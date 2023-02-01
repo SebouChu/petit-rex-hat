@@ -10,6 +10,11 @@
 #  updated_at :datetime         not null
 #
 
+twenty_god:
+  name: Saison 2021-2022
+  status: 2
+  god_mode: true
+
 twentyone:
   name: Saison 2021-2022
   status: 2
