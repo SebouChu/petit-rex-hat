@@ -22,4 +22,4 @@ Rails.application.configure do
 
   # Report violations without enforcing the policy.
   # config.content_security_policy_report_only = true
-end
+end unless Rails.env.development?
