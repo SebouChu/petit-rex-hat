@@ -8,6 +8,15 @@
 
   <hr>
 
+  <% if @season.users.any? %>
+    <h3><%= User.model_name.human(count: 2) %></h3>
+    <ul>
+      <% @season.users.each do |user| %>
+        <li><%= user %> : <%= @season.suggestions.where(user_id: user.id).size %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <% if @season.upcoming? %>
     <h2><%= Season::Suggestion.model_name.human(count: 2) %> (<%= @season.suggestions.count %>)</h2>
     <div class="actions mb-4">
@@ -22,14 +31,6 @@
         </div>
       <% end %>
     </div>
-    <% if @season.users.any? %>
-      <h3><%= User.model_name.human(count: 2) %></h3>
-      <ul>
-        <% @season.users.each do |user| %>
-          <li><%= user %> : <%= @season.suggestions.where(user_id: user.id).size %></li>
-        <% end %>
-      </ul>
-    <% end %>
   <% else %>
     <h2><%= Movie.model_name.human(count: 2) %></h2>
 
