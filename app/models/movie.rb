@@ -36,14 +36,14 @@ class Movie < ApplicationRecord
   end
 
   def original_poster_url
-    [TheMovieDb.configuration.base_url, "original", poster_path].join
+    ["https://www.themoviedb.org/t/p/", "original", poster_path].join
   end
 
   def small_backdrop_url
-    [TheMovieDb.configuration.base_url, SMALL_BACKDROP_SIZE, backdrop_path].join
+    ["https://www.themoviedb.org/t/p/", SMALL_BACKDROP_SIZE, backdrop_path].join
   end
 
   def small_poster_url
-    [TheMovieDb.configuration.base_url, SMALL_POSTER_SIZE, poster_path].join
+    ["https://www.themoviedb.org/t/p/", SMALL_POSTER_SIZE, poster_path].join
   end
 end
