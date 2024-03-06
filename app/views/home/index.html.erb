@@ -5,10 +5,19 @@
   <% if @season.present? %>
     <h2>Dernier tirage</h2>
     <%= link_to "Voir la saison", @season, class: "btn btn-primary" %>
+    <%= link_to(t("seasons.pick_suggestion"),
+                pick_in_season_suggestions_path(@season),
+                method: :post,
+                data: { confirm: t("alerts.please_confirm") },
+                class: "btn btn-success") if @season.suggestions.not_picked.exists? %>
+    <% if @current_suggestion.present? %>
     <div class="row mt-3">
       <div class="col-md-2">
         <%= render "seasons/suggestions/suggestion", suggestion: @current_suggestion %>
       </div>
     </div>
+    <% else %>
+      <p>Pas de tirage pour le moment.</p>
+    <% end %>
   <% end %>
 </div>
