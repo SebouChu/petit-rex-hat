@@ -62,6 +62,7 @@ fr:
     add_suggestion: Ajouter une suggestion
     pick_suggestion: Tirer une suggestion
     remaining_suggestions: Suggestions restantes
+    your_remaining_suggestions: Vos suggestions restantes
   simple_form:
     "yes": 'Oui'
     "no": 'Non'

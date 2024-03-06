@@ -2,7 +2,7 @@ class SeasonsController < ApplicationController
   before_action :load_season, only: [:show, :edit, :update, :destroy]
 
   def index
-    @seasons = Season.order(created_at: :desc)
+    @seasons = Season.ordered
     breadcrumb
   end
 
@@ -10,6 +10,7 @@ class SeasonsController < ApplicationController
     @user_suggestions = @season.suggestions.where(user_id: current_user.id).order(:created_at)
     @picked_suggestions = @season.suggestions.picked.order(picked_at: :desc)
     @remaining_suggestions = @season.suggestions.not_picked
+    @remaining_user_suggestions = @user_suggestions.not_picked
     @last_picked_suggestion = @picked_suggestions.first
     breadcrumb
   end
