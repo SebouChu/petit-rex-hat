@@ -57,14 +57,26 @@
       </div>
     </div>
 
-    <hr class="my-4">
-    <h2><%= t('seasons.your_remaining_suggestions') %></h2>
-    <div class="row mt-3 mb-4">
-      <% @remaining_user_suggestions.each do |suggestion| %>
-        <div class="col-md-2">
-          <%= render "seasons/suggestions/suggestion", suggestion: suggestion %>
+    <% if @remaining_user_suggestions.any? %>
+      <hr class="my-4">
+      <h2><%= t('seasons.your_remaining_suggestions') %></h2>
+      <button class="btn btn-primary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#userSuggestionsCollapse"
+              aria-expanded="false"
+              aria-controls="userSuggestionsCollapse">
+        Afficher / Cacher
+      </button>
+      <div class="collapse" id="userSuggestionsCollapse">
+        <div class="row mt-3 mb-4">
+          <% @remaining_user_suggestions.each do |suggestion| %>
+            <div class="col-md-2">
+              <%= render "seasons/suggestions/suggestion", suggestion: suggestion, hide_suggested_by: true %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

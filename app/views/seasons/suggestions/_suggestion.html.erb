@@ -1,3 +1,4 @@
+<% hide_suggested_by ||= false %>
 <div class="card w-100">
   <%= image_tag suggestion.movie.small_poster_url, class: "card-img-top", alt: suggestion.movie.title_fr %>
   <div class="card-body">
@@ -5,7 +6,7 @@
     <h6 class="card-subtitle mb-2 text-muted">
       <%= [suggestion.movie.director, suggestion.movie.release_date&.year].join(', ') %>
     </h6>
-    <% unless @season.upcoming? %>
+    <% unless @season.upcoming? || hide_suggested_by %>
       <p><small><%= t("suggestions.suggested_by", user: suggestion.user.to_s) %></small></p>
     <% end %>
     <div class="card-actions">
