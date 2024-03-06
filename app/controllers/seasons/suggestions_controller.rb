@@ -4,7 +4,7 @@ class Seasons::SuggestionsController < ApplicationController
 
   def pick
     @season.pick_suggestion!
-    redirect_to @season
+    redirect_back(fallback_location: @season)
   end
 
   def new
