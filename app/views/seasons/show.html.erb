@@ -12,7 +12,15 @@
     <h3><%= User.model_name.human(count: 2) %></h3>
     <ul>
       <% @season.users.each do |user| %>
-        <li><%= user %> : <%= @season.suggestions.where(user_id: user.id).size %></li>
+        <%-
+        user_suggestions_count = @season.suggestions.where(user_id: user.id).size
+        user_remaining_suggestions_count = @season.suggestions.not_picked.where(user_id: user.id).size
+        -%>
+        <li>
+          <%= user %> :
+          <%= user_suggestions_count %> <%= Season::Suggestion.model_name.human(count: user_suggestions_count) %>
+          (non tirées : <%= user_remaining_suggestions_count %>)
+        </li>
       <% end %>
     </ul>
   <% end %>
