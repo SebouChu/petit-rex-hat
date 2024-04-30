@@ -18,7 +18,7 @@
         -%>
         <li>
           <%= user %> :
-          <%= user_suggestions_count %> <%= Season::Suggestion.model_name.human(count: user_suggestions_count) %>
+          <%= user_suggestions_count %> <%= Season::Suggestion.model_name.human(count: user_suggestions_count).downcase %>
           (non tirées : <%= user_remaining_suggestions_count %>)
         </li>
       <% end %>
