@@ -12,7 +12,7 @@
 class Season < ApplicationRecord
   MAX_SUGGESTIONS_PER_USER = 10
 
-  enum status: { ongoing: 1, upcoming: 10, ended: 20 }
+  enum :status, { ongoing: 1, upcoming: 10, ended: 20 }
 
   has_many :suggestions, dependent: :destroy
   has_many :users, -> { distinct }, through: :suggestions
