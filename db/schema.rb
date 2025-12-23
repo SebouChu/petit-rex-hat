@@ -10,29 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_06_164907) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_23_144118) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "active_storage_attachments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.uuid "record_id", null: false
     t.uuid "blob_id", null: false
     t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.uuid "record_id", null: false
+    t.string "record_type", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
   create_table "active_storage_blobs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum"
+    t.string "content_type"
     t.datetime "created_at", null: false
+    t.string "filename", null: false
+    t.string "key", null: false
+    t.text "metadata"
+    t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -43,46 +43,46 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_06_164907) do
   end
 
   create_table "movies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "backdrop_path"
+    t.datetime "created_at", null: false
+    t.string "director"
+    t.string "poster_path"
+    t.date "release_date"
     t.string "title"
     t.string "title_fr"
-    t.string "director"
-    t.date "release_date"
-    t.string "poster_path"
-    t.string "backdrop_path"
     t.bigint "tmdb_identifier"
-    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "season_suggestions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "season_id", null: false
-    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
     t.uuid "movie_id", null: false
     t.datetime "picked_at"
-    t.datetime "created_at", null: false
+    t.uuid "season_id", null: false
     t.datetime "updated_at", null: false
+    t.uuid "user_id", null: false
     t.index ["movie_id"], name: "index_season_suggestions_on_movie_id"
     t.index ["season_id"], name: "index_season_suggestions_on_season_id"
     t.index ["user_id"], name: "index_season_suggestions_on_user_id"
   end
 
   create_table "seasons", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.boolean "god_mode", default: false
     t.string "name"
     t.integer "status", default: 10
-    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "god_mode", default: false
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.datetime "created_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "nickname"
+    t.datetime "remember_created_at"
+    t.datetime "reset_password_sent_at"
+    t.string "reset_password_token"
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
