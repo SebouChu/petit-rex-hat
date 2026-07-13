@@ -40,7 +40,7 @@ module PetitRexHat
 
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-        address: "smtp-relay.sendinblue.com",
+        address: "smtp-relay.brevo.com",
         port: 587,
         user_name: ENV['SENDINBLUE_SMTP_USER'],
         password: ENV['SENDINBLUE_SMTP_PASSWORD'],
